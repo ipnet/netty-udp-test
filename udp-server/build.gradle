@@ -27,7 +27,7 @@ test {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'org.iproute.udp.server.Application'
+        attributes 'Main-Class': 'org.iproute.udp.server.ServerApp'
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

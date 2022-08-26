@@ -23,7 +23,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'org.iproute.udp.client.Application'
+        attributes 'Main-Class': 'org.iproute.udp.client.ClientApp'
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
