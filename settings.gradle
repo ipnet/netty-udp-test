@@ -1,0 +1,14 @@
+// 放在最前面
+pluginManagement {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'netty-udp-test'
+
+include("udp-server")
+include("udp-client")

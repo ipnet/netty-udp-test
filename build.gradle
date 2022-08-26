@@ -1,0 +1,40 @@
+//plugins {
+//    id 'com.github.johnrengelman.shadow' version '7.1.2' apply(false)
+//}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: "maven-publish"
+
+    group = 'org.iproute'
+    version = '0.0.1-SNAPSHOT'
+
+    sourceCompatibility = '1.8'
+
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/spring/' }
+        maven { url "https://repo.spring.io/libs-milestone/" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+
+    group = 'org.iproute'
+    version = '1.0.0-SNAPSHOT'
+
+}
+
+jar {
+    enabled(false)
+}
+
+subprojects {
+
+    dependencies {
+        compileOnly  'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+        implementation 'org.slf4j:slf4j-api:1.7.36'
+        implementation 'ch.qos.logback:logback-classic:1.2.11'
+        implementation 'ch.qos.logback:logback-core:1.2.11'
+    }
+}

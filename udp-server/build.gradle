@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'org.iproute'
+version '1.0-SNAPSHOT'
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+//    implementation group: 'io.netty', name: 'netty-all', version: '4.1.79.Final'
+
+    implementation "io.projectreactor.netty:reactor-netty-core:1.1.0-M5"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.iproute.udp.server.Application'
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
