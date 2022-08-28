@@ -19,7 +19,6 @@ import java.util.UUID;
 public class ClientApp {
     static final String HOST = System.getProperty("server.host", "127.0.0.1");
     static final int PORT = Integer.parseInt(System.getProperty("server.port", "12345"));
-
     @SneakyThrows
     public static void main(String[] args) {
         String uuid = UUID.randomUUID().toString();
