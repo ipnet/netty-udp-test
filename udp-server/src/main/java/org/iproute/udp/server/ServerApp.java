@@ -17,6 +17,8 @@ import java.time.Duration;
  */
 @Slf4j
 public class ServerApp {
+
+    static final String HOST = System.getProperty("server.host", "0.0.0.0");
     static final int PORT = Integer.parseInt(System.getProperty("server.port", "12345"));
 
     public static void main(String[] args) {
@@ -37,10 +39,10 @@ public class ServerApp {
         //                                         })))
         //                 .bindNow(Duration.ofSeconds(30));
 
-
         Connection server =
                 UdpServer.create()
-                        .host("127.0.0.1").port(PORT)
+                        .host(HOST)
+                        .port(PORT)
                         .handle((in, out) ->
                                 in.receiveObject()
                                         .map(o -> {
