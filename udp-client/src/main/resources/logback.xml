@@ -23,7 +23,11 @@
         </encoder>
     </appender>
 
-    <logger name="org.iproute" level="DEBUG"/>
+
+    <logger name="org.iproute" level="INFO"/>
+    <logger name="io.netty" level="INFO"/>
+    <logger name="reactor.netty" level="INFO"/>
+
 
     <root level="root">
         <appender-ref ref="stdout"/>
